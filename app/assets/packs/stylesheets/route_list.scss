@@ -1,0 +1,52 @@
+.planning-index {
+  padding: 20px;
+
+  .title-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    img {
+      width: 150px;
+    }
+
+    h3 {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  }
+
+  .route-list-section {
+    ul {
+      padding-left: 0;
+
+      a {
+        color: #5a5a5a;
+      }
+
+      li {
+        list-style: none;
+        border: 1px solid #ccc;
+        padding: 15px;
+
+        .details {
+          font-size: 13px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 15px;
+    background: #0ECE78;
+    margin-bottom: 20px;
+
+    a {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}

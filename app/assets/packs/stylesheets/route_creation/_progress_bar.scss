@@ -1,0 +1,41 @@
+.progress-section {
+  margin-bottom: 70px;
+
+  .progress-line {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+
+    .circle,
+    .bar {
+      display: inline-block;
+      background: #ddd;
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+    }
+    .bar {
+      position: relative;
+      width: 32px;
+      height: 3px;
+      top: -5px;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+
+    /* Done / Active */
+    .bar.done,
+    .circle.done {
+      /* background: #00CC9C; */
+      background: #000;
+    }
+
+    img.roadbike-icon {
+      position: absolute;
+      top: -25px;
+      width: 35px;
+    }
+  }
+}

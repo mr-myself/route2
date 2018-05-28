@@ -1,0 +1,18 @@
+= stylesheet_pack_tag  'stylesheets/client', media: 'all', 'data-turbolinks-track': 'reload'
+= stylesheet_pack_tag  'stylesheets/route_list', media: 'all', 'data-turbolinks-track': 'reload'
+
+.planning-index
+  .title-section
+    img src="#{asset_pack_path 'packs/images/logo.png' }"
+    h3 #{current_user.name}さんのルート一覧
+
+  .route-list-section
+    ul
+      - @routes&.order('created_at DESC')&.each do |route|
+        a href="/planning/#{route.key}"
+          li
+            p.title #{route.start_address}から#{route.destination.title}までのルート
+            p.details 約#{route.distance}km | #{route.created_at.strftime('%Y年%m月%d日 %H:%M')}
+
+  .cta-section
+    a href='/planning/new' 新しいルートを作成する

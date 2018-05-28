@@ -1,0 +1,57 @@
+ruby:
+  origin = if @route.start_address.present?
+    URI.encode(@route.start_address)
+  else
+    origin = "#{@route.destination.latitude},#{@route.destination.longitude}"
+  end
+
+.planned-destination-section
+  .map-view
+    iframe#map src="https://www.google.com/maps/embed/v1/directions?key=GOOGLE_MAP_KEY&origin=#{origin}&destination=place_id:#{@route.destination.place_id}#{waypoints}&avoid=tolls|highways&mode=walking" frameborder="0" style="border:0"
+
+.route-analytics-section.flex
+  .elevation-section
+    span.title 獲得標高(目安)
+    span.data #{@route.elevation_gain}M
+  .duration-section
+    span.title 所要時間(20km/h)
+    span.data 約#{(@route.distance/20).round(1)}時間
+
+.planned-spots-section
+  .explanation
+    p このルートでは下記のスポットをお楽しみいただけます
+    .flex
+      - @route.spots.each.with_index(1) do |spot, index|
+        .spot
+          img src="#{spot.spot_photos.first.photo.url}"
+          span = truncate(spot.title, length: 8)
+        - if index%4 == 0
+          .flex-line-break
+
+.cta-section
+  .additional-cta.flex
+    button.send onclick='CopyToClipboard();' 友人に送る
+    button.download onclick="SendToGA('Download');" GPXでダウンロード(PC)
+    .shared-url
+      input#url value="#{request.url}" type='text'
+
+.progress-section
+  .progress-line
+    .circle.done
+    span.bar.done
+    .circle.done
+    span.bar.done
+    .circle.done
+    span.bar.done
+    .circle.done
+    span.bar.done
+    .circle.done
+      img.roadbike-icon src="#{asset_pack_path 'packs/images/icon-roadbike.png'}"
+
+.contact-form
+  h2 ご意見ご感想をお待ちしております！
+  p Route2をご利用いただきありがとうございます。Route2はまだ発展途上ですが、皆様のお声を基に改善を繰り返していきます。ご意見ご感想、ご不満点など、ぜひ下記の電話番号、またはアドレスまでご連絡いただきませんでしょうか？
+  .contact-email
+    a href='mailto:contact@troc.club' contact@troc.club
+  .contact-phone
+    p 090-7945-9586

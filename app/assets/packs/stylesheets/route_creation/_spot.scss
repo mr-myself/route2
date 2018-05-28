@@ -1,0 +1,99 @@
+.spots-section {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  .alert {
+    position: absolute;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity .5s;
+    color: white;
+    vertical-align: middle;
+  }
+
+  .alert-visible {
+    opacity: 1;
+  }
+
+  .alert-right {
+    top: 0;
+    right: 0;
+    color: #0ECE78;
+    background: white;
+    border: 3px solid #0ECE78;
+    padding: 5px 10px;
+  }
+
+  .alert-left {
+    top: 0;
+    left: 0;
+    color: #EBEBEB;
+    background: white;
+    border: 3px solid #EBEBEB;
+    padding: 5px 10px;
+  }
+
+  .swipe-indicator-section {
+    text-align: center;
+
+    img {
+      height: 50px;
+
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+/* tinder-like swipe */
+.swipe-root {
+  margin: 0 auto;
+  position: relative;
+  min-height: 280px;
+  max-height: 100px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  border: none;
+}
+
+.buddy {
+  cursor: hand;
+
+  p.title {
+    color: #5a5a5a;
+    text-align: center;
+    padding: 10px;
+    width: 280px;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+}
+
+.swipe-spot {
+  background: #ddd;
+  width: 280px;
+  height: 215px;
+  display: block;
+  /* margin-top: 10px;
+    margin-left: 10px; */
+  background-size: contain !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.no-spots {
+  text-align: center;
+  margin: 50px 0;
+
+  img {
+    width: 50%;
+    max-width: 400px;
+  }
+}

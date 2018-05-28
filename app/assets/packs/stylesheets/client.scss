@@ -1,0 +1,16 @@
+@import './normalize';
+@import '~bootstrap/dist/css/bootstrap';
+@import './route_creation';
+@import './entrance';
+@import './_side_menu';
+
+input[type='submit'],
+button,
+a,
+a:not([href]) {
+  cursor: pointer;
+}
+
+body {
+  color: #5a5a5a;
+}

@@ -1,0 +1,65 @@
+.route-creation {
+  @import 'route_creation/_common';
+  @import 'route_creation/_progress_bar';
+
+  @import 'route_creation/_start_position';
+  @import 'route_creation/_destination';
+  @import 'route_creation/_spot';
+  @import 'route_creation/_spot_order';
+  @import 'route_creation/_overview';
+}
+
+/* for sorting of react-sortable-hoc */
+.sorting-element {
+  li {
+    list-style: none;
+    border: 1px solid #EFEFEF;
+    display: flex;
+    align-items: center;
+
+    img.spot-icon {
+      height: 50px;
+      width: 25%;
+
+      @media (min-width: 576px) {
+        height: 100px;
+        width: 20%;
+      }
+    }
+
+    .sortable-title {
+      color: #5a5a5a;
+      margin-left: 20px;
+      vertical-align: middle;
+      width: 55%;
+      padding: 10px 0;
+    }
+
+    .remove-spot {
+      width: 20%;
+
+      img.remove-spot-icon {
+        cursor: pointer;
+        float: right;
+        width: 22px;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .element-analytics {
+    margin-bottom: 10px;
+    font-size: 12px;
+    border: 1px solid #efefef;
+    padding: 2px 5px;
+
+    .distance-from {
+      margin-right: 40px;
+    }
+
+    .sum-distance {
+      float: right;
+      font-weight: bold;
+    }
+  }
+}

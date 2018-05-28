@@ -1,0 +1,46 @@
+ruby:
+  origin = if @route.start_address.present?
+    URI.encode(@route.start_address)
+  else
+    origin = "#{@route.destination.latitude},#{@route.destination.longitude}"
+  end
+
+.container
+  .planned-destination-section
+    .row
+      .map-view.col-md-8
+        iframe#map src="https://www.google.com/maps/embed/v1/directions?key=GOOGLE_MAP_KEY&origin=#{origin}&destination=place_id:#{@route.destination.place_id}#{waypoints}&avoid=tolls|highways&mode=walking" frameborder="0" style="border:0"
+
+      .col-md-4
+        .route-analytics-section.flex
+          .elevation-section
+            span.title 獲得標高(目安)
+            span.data #{@route.elevation_gain}M
+          .duration-section
+            span.title 所要時間(20km/h)
+            span.data 約#{(@route.distance/20).round(1)}時間
+
+        .cta-section.full-width
+          .additional-cta.flex
+            button.send onclick='CopyToClipboard();' 友人に送る
+            - unless @route.route_step.nil?
+              a.download onclick="SendToGA('Download')" href="#{planning_gpx_path(planning_key: @route.key)}" GPXでダウンロード
+            .shared-url
+              input#url value="#{request.url}" type='text'
+
+  .planned-spots-section
+    .explanation
+      p このルートでは下記のスポットをお楽しみいただけます
+      .flex
+        - @route.spots.each.with_index(1) do |spot, index|
+          .spot
+            img src="#{spot.spot_photos.first.photo.url}"
+            span = truncate(spot.title, length: 8)
+          - if index%4 == 0
+            .flex-line-break
+
+.contact-form
+  h2 ご意見ご感想をお待ちしております！
+  p この度はRoute2をご利用いただきありがとうございます。どんな些細なことでも良いので、ご意見ご感想、ご不満点など、ぜひご連絡いただきませんでしょうか。ローディーの皆様にとっての最高のツールとなるよう、今後Route2を運営していくヒントとさせていただきたく思います。
+  .contact-email
+    a href='mailto:contact@troc.club' contact@troc.club

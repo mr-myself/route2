@@ -1,0 +1,52 @@
+ruby:
+  if @route.spots.present?
+    waypoints = '&waypoints='.tap do |str|
+      @route.spots.each.with_index(0) do |spot, index|
+        if index == 0
+          str << "place_id:#{spot.place_id}"
+        else
+          str << "|place_id:#{spot.place_id}"
+        end
+      end
+    end
+  end
+
+javascript:
+  function SendToGA(action_name) {
+    console.log(action_name)
+    if ("ga" in window) {
+      tracker = ga.getAll()[0];
+      if (tracker) {
+        tracker.send("event", "click", action_name);
+      }
+    }
+  }
+
+  function CopyToClipboard() {
+    SendToGA('Share');
+
+    const urltext = document.getElementById("url");
+    urltext.select();
+    document.execCommand("copy");
+
+    window.alert('URLをコピーしました')
+  }
+
+script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"
+script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'
+link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"
+
+- if current_user&.routes.count >= 1
+  = render 'shared/side_menu'
+
+.route-creation.wrapper
+  .title-section
+    h1.one
+      span #{@route.destination.title}までのルート
+    p.complete-text Let's enjoy Roadbike!
+
+  .d-none.d-md-block
+    = render partial: 'overview_pc', locals: { waypoints: waypoints }
+
+  .d-md-none
+    = render partial: 'overview_mobile', locals: { waypoints: waypoints }

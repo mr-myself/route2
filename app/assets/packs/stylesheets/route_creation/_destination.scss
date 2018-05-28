@@ -1,0 +1,77 @@
+.distance-map-section {
+  margin: 20px 20px 50px;
+}
+
+.slider-section {
+  margin: 0 40px;
+}
+
+.filter-category-section {
+  margin: 10px 40px 0;
+
+  select {
+    border-radius: 0;
+  }
+}
+
+.destination-photos-section {
+  text-align: center;
+  margin: 20px auto 30px;
+
+  ul {
+    padding-left: 0;
+    overflow: auto;
+    max-height: 500px;
+
+    li {
+      position: relative;
+      display: inline-block;
+      list-style: none;
+      text-align: left;
+      width: 45%;
+
+      @media (min-width: 576px) {
+        width: 28%;
+      }
+
+      label {
+        img {
+          width: 100%;
+        }
+
+        span {
+          position: absolute;
+          bottom: 12px;
+          left: 8px;
+          color: white;
+          font-weight: bold;
+          text-shadow: 0px -2px 10px rgba(0,0,0,0.5);
+        }
+      }
+    }
+  }
+}
+
+.destination-detail-section {
+  text-align: center;
+  margin: 0px 20px;
+  font-size: 14px;
+
+  a {
+    &.map-link {
+      color: #5a5a5a;
+      border-bottom: solid 1px #ccc;
+      padding-bottom: 3px;
+      line-height: 28px;
+      text-decoration: none;
+
+      .text-detail {
+        font-size: 12px;
+      }
+    }
+  }
+
+  p {
+    margin-top: 8px;
+  }
+}

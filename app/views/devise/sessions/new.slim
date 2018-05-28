@@ -1,0 +1,25 @@
+.entrance
+  .signup-section
+    .logo-section
+      img src="#{asset_pack_path 'packs/images/logo.png' }"
+      p.slogan 今日走る道をもっと楽しく、かんたんに
+
+    .signup-form
+      = form_for @user, url: new_user_session_path do |f|
+        = devise_error_messages!
+
+        = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス', autofocus: true, autocomplete: "email"
+        = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+        = f.submit 'ログイン', class: 'form-control submit-btn'
+
+      .switching-entrance-section
+        a href='/users/sign_up' アカウントをまだ持っていない方はこちら
+
+    .or-separator
+      img src="#{asset_pack_path 'packs/images/separator.png' }"
+
+    .social-login-section
+      .social-btn.facebook
+        = link_to user_facebook_omniauth_authorize_path do
+          img src="#{asset_pack_path 'packs/images/icon-facebook.svg' }"
+          span Facebookを使ってログイン

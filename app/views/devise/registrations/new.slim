@@ -1,0 +1,65 @@
+.entrance
+  .top-image-section
+    .logo-section
+      img src="#{asset_pack_path 'packs/images/logo.png' }"
+      p.slogan 今日走る道をもっと楽しく、かんたんに
+
+    .move-to-signup
+      a.to-form-btn href="#signup-form" 今すぐ登録してはじめる
+
+      .switching-entrance-section
+        a href='/users/sign_in' 既にアカウントを持っている方はこちら
+
+  .key-message-section
+    p ロードバイクでどこに行くか決めるのが大変、そこに至るまでのルートを作成するのが面倒といったことは過去にありませんか？
+    p Route2はスマホで数タップするだけでかんたんに目的地を決め、ルート作成まで行えるサービスです。
+
+  .about-us-section
+    h3 About us
+
+    .profile
+      .profile-image
+        img src="#{asset_pack_path 'packs/images/profile/tsuji.png' }"
+      .name
+        span 辻雄也
+      .career
+        span 慶応大学卒業後、DeNA、Square、Kyashと一貫してスタートアップでのマーケティングに従事。休日はロングライドに出かけるローディーです。月走行距離500km。
+
+    hr
+
+    .profile
+      .profile-image
+        img src="#{asset_pack_path 'packs/images/profile/hoshino.png' }"
+      .name
+        span 星野圭亮
+      .career
+        span 青山学院大学卒業後、日本やドイツのスタートアップで新規事業立ち上げ責任者や、プログラマーとして働く。休日はポタリングに出かけてきれいな景色を観に行くのが好きです。
+
+  .interval-section
+    img src="#{asset_pack_path 'packs/images/race_scene.jpg' }"
+
+  .signup-section
+    .logo-section
+      img src="#{asset_pack_path 'packs/images/logo.png' }"
+      p.slogan 今日走る道をもっと楽しく、かんたんに
+
+    .signup-form#signup-form
+      = form_for @user, url: user_registration_path do |f|
+        = devise_error_messages!
+
+        = f.text_field :name, class: 'form-control', placeholder: '名前'
+        = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+        = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+        = f.submit '登録してはじめる', class: 'form-control submit-btn'
+
+      .switching-entrance-section
+        a href='/users/sign_in' 既にアカウントを持っている方はこちら
+
+    .or-separator
+      img src="#{asset_pack_path 'packs/images/separator.png' }"
+
+    .social-login-section
+      .social-btn.facebook
+        = link_to user_facebook_omniauth_authorize_path do
+          img src="#{asset_pack_path 'packs/images/icon-facebook.svg' }"
+          span Facebookを使ってログイン

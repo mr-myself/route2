@@ -1,0 +1,24 @@
+{
+  "name": "route2",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.4",
+    "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.1.0",
+    "prop-types": "^15.6.1",
+    "react": "^15.4.2",
+    "react-compound-slider": "^0.11.0",
+    "react-dom": "^15.4.2",
+    "react-ga": "^2.5.0",
+    "react-redux": "^5.0.7",
+    "react-sortable-hoc": "^0.6.8",
+    "react-swipe-card": "^0.1.4",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

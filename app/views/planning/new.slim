@@ -1,0 +1,11 @@
+script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_KEY&libraries=places"
+script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"
+script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'
+
+- if current_user.routes.count >= 1
+  = render 'shared/side_menu'
+
+.route-creation.wrapper
+  #app
+
+= javascript_pack_tag 'javascripts/startup/Planning'

@@ -1,0 +1,137 @@
+.planned-destination-section {
+  margin: 0 20px;
+
+  .map-view {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.planned-spots-section {
+  margin: 30px 20px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+
+  .flex {
+    justify-content: start;
+
+    @media (min-width: 576px) {
+      justify-content: space-evenly;
+    }
+  }
+
+  .explanation {
+    text-align: center;
+
+    p {
+      font-size: 13px;
+      color: #5a5a5a;
+    }
+
+    .spot {
+      text-align: center;
+      width: 80px;
+      margin-right: 3px;
+      margin-bottom: 5px;
+
+      @media (min-width: 576px) {
+        width: initial;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      img {
+        display: block;
+        width: 80px;
+        height: 70px;
+
+        @media (min-width: 576px) {
+          width: initial;
+          height: 120px;
+        }
+      }
+
+      span {
+        font-size: 12px;
+
+        @media (min-width: 576px) {
+          width: initial;
+          display: block;
+          font-size: 14px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+.route-analytics-section {
+  margin: 0 20px 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+
+  @media (min-width: 576px) {
+    margin: 20px 0 0;
+  }
+
+  .title {
+    display: block;
+    color: #5a5a5a;
+    font-size: 12px;
+  }
+
+  .data {
+    display: block;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+
+    @media (min-width: 576px) {
+      font-size: 25px;
+    }
+  }
+
+  .elevation-section {
+    width: 48%;
+    border: #efefef 1px solid;
+    padding: 5px 10px 0;
+
+    @media (min-width: 576px) {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px 20px 5px;
+    }
+  }
+
+  .duration-section {
+    width: 48%;
+    border: #efefef 1px solid;
+    padding: 5px 10px 0;
+
+    @media (min-width: 576px) {
+      width: 100%;
+      padding: 10px 20px 5px;
+    }
+  }
+}
+
+.contact-form {
+  text-align: center;
+  color: #5a5a5a;
+  border-top: 2px dotted #5a5a5a;
+  padding: 20px;
+  background: #ddd;
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .contact-email {
+    font-size: 18px;
+  }
+}

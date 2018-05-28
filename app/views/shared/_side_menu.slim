@@ -1,0 +1,20 @@
+.overlay.js-overlay
+
+button.side-menu-btn.js-side-menu-btn
+
+.slider-side-menu
+  ul
+    li
+      a href='/planning/new' 新しいルートを作成
+    li
+      a href='/planning' いままでに作成したルートを確認
+
+
+javascript:
+  let $body = $('body');
+  $('.js-side-menu-btn').on('click', function () {
+    $body.toggleClass('side-open');
+    $('.js-overlay').on('click', function () {
+      $body.removeClass('side-open');
+    });
+  });

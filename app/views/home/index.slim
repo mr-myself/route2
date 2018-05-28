@@ -1,0 +1,23 @@
+.entrance
+  .logo-section
+    img src="#{asset_pack_path 'packs/images/logo.png' }"
+    p.slogan 今日走る道をもっと楽しく、かんたんに
+
+  .signup-form
+    = form_for @user, url: user_registration_path do |f|
+      = f.text_field :name, class: 'form-control', placeholder: '名前'
+      = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+      = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+      = f.submit '登録してはじめる', class: 'form-control submit-btn'
+
+  .or-separator
+    img src="#{asset_pack_path 'packs/images/separator.png' }"
+
+  .social-login-section
+    .social-btn.facebook
+      = link_to user_facebook_omniauth_authorize_path do
+        img src="#{asset_pack_path 'packs/images/icon-facebook.svg' }"
+        span Facebookを使ってログイン
+
+
+
