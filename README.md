@@ -1,24 +1,16 @@
-# README
+Route2 is a service for all roadies to find a fascinated destination with great stopovers.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dev Env
+- Rails 5.2.0
+- Ruby 2.5.0
+- ReactJS
+- PostgreSQL
+- Nginx
 
-Things you may want to cover:
+## Introduction
+Route2 is a rails based app. For frontend, I've implemented in React. This is expected to be used on mobile devices.
 
-* Ruby version
+Service URL:  
+https://route2.co/planning/new  
+(This is beta ver. Currently, you can find places near Tokyo.)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
